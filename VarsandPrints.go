@@ -3,6 +3,7 @@ package main
 
 import (
 	"fmt"
+	"sort"
 	"strings"
 )
 
@@ -82,7 +83,46 @@ func main() {
 	fmt.Println(strings.ReplaceAll(greeting, "hello", "hi"))
 	fmt.Println(strings.ToUpper(greeting))
 	fmt.Println(strings.Index(greeting, "ll"))
+	fmt.Println(strings.Split(greeting, " "))
 	// original value
 	fmt.Println("Original string value :", greeting)
+
+	ages1 := []int{45, 20, 30, 75, 60, 50, 25}
+
+	sort.Ints(ages1)
+	fmt.Println(ages1)
+
+	index := sort.SearchInts(ages1, 30)
+	fmt.Println(index)
+
+	names1 := []string{"Yoshi", "Mario", "Peach", "Bowser", "luigi"}
+	sort.Strings(names1)
+	fmt.Println(names1)
+	fmt.Println(sort.SearchStrings(names1, "Bowswer"))
+
+	// While loops
+	x := 0
+	for x < 5 {
+		fmt.Println("Value of x is :", x)
+		x++
+	}
+
+	for i := 0; i < 5; i++ {
+		fmt.Println("Value of I is :", i)
+	}
+
+	names2 := []string{"Mario", "luigi", "Yoshi", "Peach"}
+
+	for i := 0; i < len(names2); i++ {
+		fmt.Println(names2[i])
+	}
+
+	for index, value := range names {
+		fmt.Printf("the value at index %v is %v /n", index, value)
+	}
+
+	for _, value := range names {
+		fmt.Printf("the value is %v \n", value)
+	}
 
 }
