@@ -1,7 +1,10 @@
 // My fisher price first go code,  learning to print, variables and some string formatting, beware them sprints.
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strings"
+)
 
 func main() {
 
@@ -47,5 +50,39 @@ func main() {
 	fmt.Printf("Age has changed to %v \n", ageOne)
 	// Despite changing age one, str doesnt respect var change, silly
 	fmt.Println("The saves string is:", str)
+
+	// Arrays, slices and ranges
+	// Longhand: var ages [3]int = [3]int{20, 25, 30}
+	var ages = [3]int{20, 25, 30}
+	names := [4]string{"Yoshi", "Mario", "Bowswer", "Peach"}
+
+	fmt.Println(ages, len(ages))
+	fmt.Println(names, len(names))
+
+	// Slices (dynamic (traditional arrays))
+	var scores = []int{100, 50, 60}
+	scores[2] = 25
+	scores = append(scores, 85)
+
+	fmt.Println(scores, len(scores))
+
+	// Slice ranges
+	rangeOne := names[1:3]
+	rangeTwo := names[2:]
+	rangeThree := names[:3]
+
+	fmt.Println(rangeOne, rangeTwo, rangeThree)
+
+	// strings example imported package
+	greeting := "hello there"
+	// Should return true
+	fmt.Println(strings.Contains(greeting, "hello"))
+	// Should return false
+	fmt.Println(strings.Contains(greeting, "hello!"))
+	fmt.Println(strings.ReplaceAll(greeting, "hello", "hi"))
+	fmt.Println(strings.ToUpper(greeting))
+	fmt.Println(strings.Index(greeting, "ll"))
+	// original value
+	fmt.Println("Original string value :", greeting)
 
 }
