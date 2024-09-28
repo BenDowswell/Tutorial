@@ -1,3 +1,4 @@
+// My fisher price first go code,  learning to print, variables and some string formatting, beware them sprints.
 package main
 
 import "fmt"
